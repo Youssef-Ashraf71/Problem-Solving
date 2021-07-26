@@ -1,0 +1,23 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#define ll  long long
+using namespace std ;
+int main(){
+    ll n,i=0,j=1,len,ones=0,zeros=0;
+    cin>>n;
+    len =n ;
+     string p;
+     cin>>p;
+for(i=0;i<n;i++){
+    if(p[i]=='1')
+        ones++;
+    else
+        zeros++;
+
+}
+len=abs(zeros-ones);
+cout<<len;
+    return 0 ;
+
+}

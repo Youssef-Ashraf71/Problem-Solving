@@ -1,0 +1,22 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#define ll  long long
+using namespace std ;
+int main() {
+  ll n,i ,x=0;
+  cin>>n;
+
+ for(i=0;i<n;i++){
+     string p;
+     cin>>p;
+  if(p=="++X" || p=="X++" )
+  x++;
+    if(p=="--X" || p=="X--" )
+    x--;
+
+
+ }
+    cout<<x;
+return 0;
+}
