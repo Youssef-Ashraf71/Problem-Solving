@@ -1,0 +1,33 @@
+#include<iostream>
+#include<string>
+#include<cmath>
+#define ll  long long
+using namespace std ;
+int main() {
+ll n,m,i,j;bool flag=true;
+cin>>n>>m;
+for(i=1;i<=n;i++) {
+    if (i % 2 != 0) {
+        for (j = 1; j <= m; j++) {
+            cout << "#";
+        }
+        cout << endl;
+    } else {
+        if (flag) {
+            for (j = 1; j < m; j++) {
+                cout << ".";
+            }
+            cout << "#" << endl;
+            flag=false;
+        } else {
+            cout << "#";
+            for (j = 2; j <=m; j++) {
+                cout << ".";
+            }
+            cout<<endl;
+            flag=true;
+        }
+    }
+}
+    return 0;
+}

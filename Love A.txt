@@ -1,0 +1,26 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#define ll  long long
+using namespace std ;
+int main() {
+ll num=0,i;
+string s;
+cin>>s; int lens=s.length();
+for(i=0;i<lens;i++){
+    if(s[i]=='a')
+        num++;
+}
+if(num>lens/2){
+    cout<<lens;
+    return 0;
+}
+else{
+    while(lens/2>=num){
+        lens--;
+    }
+    cout<<lens;
+
+}
+    return 0;
+}
