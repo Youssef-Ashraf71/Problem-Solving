@@ -1,0 +1,33 @@
+
+#include <iostream>
+using namespace std;
+bool prime(int,int i );
+
+#include <iostream>
+using namespace std;
+bool prime(int,int i );
+int main()
+
+{int n;
+cout<<"enter the number to be checkedd :";
+cin>>n;
+if(prime(n,2))
+cout<<"prime number ";
+else 
+cout<<"not a prime number";
+
+
+    return 0;
+}
+bool prime (int n,int i){
+    if (n<=1)
+    return false;
+       if(n==2 )
+    return true ;
+     if (i==n)
+ return true;
+    if(n%i==0)
+    return false;
+ 
+ return prime(n ,i+1);
+}

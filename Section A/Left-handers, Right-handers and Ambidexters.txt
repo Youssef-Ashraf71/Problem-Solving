@@ -1,0 +1,85 @@
+#include<iostream>
+#include<string>
+#include<cmath>
+#define ll  long long
+using namespace std ;
+int main() {
+int l,r,a,num=0,tmp=0;
+cin>>l>>r>>a;
+if((l==0 && a==0)|| (r==0 && a==0) ){
+    cout<<0;
+    return 0;
+}
+if(l==r){
+    if(a%2!=0 && a>1)
+        a--;
+    l+=a/2;
+    r+=a/2;
+    cout<<l+r;
+    return 0;
+}
+if( l>r){
+    if(l-r<=a) {
+        tmp=a;
+        a = (l - r);
+        r = r + l - r;
+        tmp=tmp-a;
+        if (tmp > 1) {
+            if (tmp % 2 != 0) {
+                tmp--;
+            }
+            l += tmp / 2;
+            r += tmp / 2;
+         //if(tmp>1){
+         //    if (tmp% 2 != 0)
+          //       a--;
+          //   l+=tmp/2;
+          //   r+=tmp/2;
+     //    }
+         cout<<l+r;
+         return 0;
+        }
+        else {
+            cout << l + r;
+            return 0;
+        }
+    }
+    else{
+        while(tmp<a && tmp< l)
+            tmp ++;
+        r+=tmp;
+        cout << r+r;
+        return 0;
+    }
+}
+if(l<r){
+    if(r-l<=a) {
+        tmp=a;
+        a = (r - l);
+        l = l + r-l ;
+        tmp=tmp-a;
+        if(tmp>1){
+            if(tmp%2!=0)
+                tmp--;
+            l+=tmp/2;
+            r+=tmp/2;
+            cout<<l+r;
+            return 0;
+        }
+        else{
+            cout<<l+r;
+            return 0;
+        }
+    }
+    else
+    {
+ while(tmp<a && tmp < r)
+     tmp ++;
+ l+=tmp;
+         cout << l+l;
+         return 0;
+     }
+
+    }
+    return 0;
+}

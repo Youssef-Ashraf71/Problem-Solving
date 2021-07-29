@@ -1,0 +1,30 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#define ll  long long
+using namespace std ;
+int main() {
+ll n,i,h,chest=0,bi=0,back=0;
+cin>>n;
+h=n;
+ll *data=new ll[n];
+for(i=0;i<n;i++)
+    cin>>data[i];
+for(i=0;i<n;i+=3){
+    chest+=data[i];
+}
+    for(i=1;i<n;i+=3){
+        bi+=data[i];
+    }
+    for(i=2;i<n;i+=3){
+        back+=data[i];
+    }
+    //cout<<chest<<" "<<bi<<" "<<back<<endl;
+if((chest>bi && bi>=back) || (chest >back && back>= bi))
+    cout<<"chest";
+    if((back>bi && bi>=chest) || (back >chest && chest>= bi))
+        cout<<"back";
+    if((bi>back && back>=chest) || (bi >chest && chest>= back))
+        cout<<"biceps";
+    return 0;
+}

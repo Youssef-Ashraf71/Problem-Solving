@@ -1,0 +1,16 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#define ll  long long
+using namespace std ;
+int main() {
+ll x,num=0;
+cin>>x;
+while(x>5){
+x-=5;
+num++;
+}
+num++;
+cout<<num;
+    return 0;
+}

@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string>
+#include<cmath>
+#define ll  long long
+using namespace std ;
+int main() {
+  ll n,i,j,k=0;
+  cin>>n;
+ int *p=new int [n];
+    int  *q=new int [n];
+    for(i=0;i<n;i++){
+        cin>>p[i]>>q[i];
+    }
+    for(i=0;i<n;i++){
+        if(p[i]==q[i]){
+            continue;
+        }else{
+        for(j=i+1;j<n;j++){
+            if(p[i]>p[j] && q[i]<q[j] )
+                k++;
+            if(p[i]<p[j] && q[i]>q[j] )
+                k++;
+            if(k==1)
+                break;
+        }
+        if(k==1)
+            break;
+    }}
+    if(k==1)
+        cout<<"Happy Alex";
+    else
+        cout<<"Poor Alex";
+
+
+    return 0;
+}

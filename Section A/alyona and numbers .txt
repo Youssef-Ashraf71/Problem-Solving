@@ -1,0 +1,24 @@
+#include <iostream>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+int main() {
+    int n, m,k;
+    cin >> n >> m;
+    int *p1 = new int[n];
+    int *p2 = new int[m];
+    int i, j, num = 0;
+    for (i = 0; i < n; i++)
+        p1[i] = i + 1;
+    for (j = 0; j < m; j++)
+        p2[j] = j + 1;
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            if ((p1[i] + p2[j]) % 5 == 0)
+                num++;
+        }
+    }
+    cout << num;
+    return 0;
+}
+
