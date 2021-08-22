@@ -1,0 +1,49 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#define ll unsigned long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    fast;
+ll i=0,j,n,k=3;
+cin>>n;
+string s;
+for(i=1;i<=n;i++) {
+    if(i==1 || i==n)
+    for (j = 1; j <= n; j++) {
+        if (j == (n / 2 + 1))
+            cout << "D";
+        else
+            cout << "*";
+    }
+    else if(i==(n/2 +1)){
+        for (j = 1; j <= n; j++)
+            cout<<"D";
+    }
+
+        else if ((i < (n / 2 + 1) && i > 1) ) {
+
+                for (j = 1; j <= (n - k) / 2; j++)
+                    cout << "*";
+                for (j = (n - k) / 2 + 1; j < (n - k) / 2 + 1 + k; j++)
+                    cout << "D";
+                for (j = (n - k) / 2 + 1 + k; j <= n; j++)
+                    cout << "*";
+                k += 2;
+        }
+
+    else if ((i > (n / 2 + 1) && i < n)){
+        k -= 2;
+        for (j = 1; j <= (n - k) / 2; j++)
+            cout << "*";
+        for (j = (n - k) / 2 + 1; j < (n - k) / 2 + 1 + k; j++)
+            cout << "D";
+        for (j = (n - k) / 2 + 1 + k; j <= n; j++)
+            cout << "*";
+    }
+
+cout<<endl;
+}
+    return 0;
+}

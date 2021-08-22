@@ -1,0 +1,24 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<iomanip>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+ll n,i; cin>>n;
+bool flag=false;
+for(i=1;i<=n;i++){
+    string s ; ll a,b;
+    cin>>s; cin>>a>>b;
+    if(a>=2400 && b>a) {
+        flag = true;
+        break;
+    }
+}
+if(flag)
+    cout<<"YES";
+else
+    cout<<"NO";
+return 0;
+}

@@ -1,0 +1,17 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<cmath>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    fast;
+string a, b ;
+cin>>a>>b;
+if(a!=b)
+    cout<<max(a.length(),b.length());
+else
+    cout<<-1;
+    return 0;
+}

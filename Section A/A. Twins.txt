@@ -1,0 +1,42 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<set>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+void swap(ll &a ,ll &b){
+    ll tmp=a;
+    a=b;
+    b=tmp;
+}
+void sortdesc(ll x[110],ll size){
+for(ll i=0; i<size-1;i++){
+   for(ll j=0;j<size-1;j++)
+    if(x[j]<x[j+1])
+    swap(x[j],x[j+1]);
+    }
+}
+
+int main() {
+ll n,i,sum1=0,sum2=0,cnt=0,j ; cin>>n;
+ll coin[110];
+for(i=0;i<n;i++)
+    cin>>coin[i];
+sortdesc(coin,n);
+bool flag=true;
+i=0;j=0;
+while(flag){
+    sum1+=coin[i];
+    cnt++;
+    sum2=0;
+    for(j=i+1;j<n;j++){
+        sum2+=coin[j];
+    }
+    i++;
+    if(sum1>sum2)
+        flag=false;
+}
+cout<<cnt;
+    return 0;
+}

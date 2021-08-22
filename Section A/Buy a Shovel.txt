@@ -1,0 +1,28 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<cmath>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    fast;
+ll k,r,i,cnt;
+cin>>k>>r;
+    //if(k%10==0)
+     //   cnt=k/10;
+//else{
+for(i=1;i<=9;i++) {
+   if((k*i)%10==0) {
+       cnt = i;
+       break;
+   }
+    else if( (k*i-r)%10==0) {
+       cnt = i;
+       break;
+   }
+ }
+//}
+cout<<cnt;
+ return 0;
+}

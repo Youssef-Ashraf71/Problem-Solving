@@ -1,0 +1,30 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<iomanip>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    ll i, n, m, j = 0;
+    cin >> n >> m;
+    ll *x = new ll[n];
+    ll *y = new ll[m];
+    for (i = 0; i < m; i++)
+        cin >> y[i];
+    for (i = 0; i < n; i++)
+        x[i]=0;
+
+    while (j < m) {
+        for (i = y[j] - 1; i < n; i++) {
+            if (x[i] == 0) {
+                x[i] = y[j];
+            }
+        }
+        j++;
+    }
+        for (i = 0; i < n; i++)
+            cout << x[i] << " ";
+
+return 0;
+}

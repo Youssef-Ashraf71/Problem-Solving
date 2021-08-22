@@ -1,0 +1,28 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<cmath>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    fast;
+ll n, i,j,m,c;
+cin>>n;
+ll *bird=new ll[n];
+for(i=0;i<n;i++)
+    cin>>bird[i];
+cin>>m; c=m;
+ll *line=new ll[m] ,*b=new ll[m];
+for(i=0;i<m;i++)
+    cin>>line[i]>>b[i];
+for(j=0;j<m;j++) {
+    bird[line[j]-1-1]+=b[j]-1;
+bird[line[j]]+=bird[line[j]-1]-b[j];
+    bird[line[j]-1]=0;
+}
+for(i=0;i<n;i++)
+    cout<<bird[i]<<endl;
+
+ return 0;
+}

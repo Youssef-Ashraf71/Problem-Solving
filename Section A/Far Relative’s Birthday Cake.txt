@@ -1,0 +1,49 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<iomanip>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+ll n,i,j,count=0,sum=0;
+cin>>n;
+char **x =new char *[n];
+
+    for (int i = 0; i < n; i++) {
+
+        // Declare a memory block
+        // of size n
+        x[i] = new char [n];
+    }
+
+
+for(i=0;i<n;i++){
+    for(j=0;j<n;j++)
+        cin>>x[i][j];
+}
+
+for(i=0;i<n;i++) {
+    count = 0;
+    for (j = 0; j < n; j++) {
+        if (x[i][j] == 'C')
+            count++;
+    }
+    sum += count * (count - 1) / 2;
+    count = 0;
+    for (j = 0; j < n; j++) {
+        if (x[j][i] == 'C')
+            count++;
+    }
+    sum += count * (count - 1) / 2;
+}
+
+cout<<sum;
+
+
+
+
+
+
+return 0;
+}

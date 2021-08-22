@@ -1,0 +1,31 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<cmath>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    fast;
+bool flag=false;
+int gems[4];
+ ll r1,r2,c1,c2,d1,d2;
+ cin>>r1>>r2;
+ cin>>c1>>c2; cin>>d1>>d2;
+ ll cn1,cn2,cn3,cn4;
+ for(cn1=1;cn1<=9;cn1++)
+     for(cn2=1;cn2<=9;cn2++)
+         for(cn3=1;cn3<=9;cn3++)
+             for(cn4=1;cn4<=9;cn4++)
+                 if(cn1+cn2==r1 && cn3+cn4 == r2 && cn1+cn4 == d1 && cn2+cn3==d2 && cn1+cn3==c1 && cn2+cn4==c2 &&cn1!=cn2 && cn1!= cn3 &&cn1!=cn4 && cn2!=cn3 && cn2!=cn4 && cn3!=cn4 ){
+                flag=true;
+           gems[0]=cn1; gems[1]=cn2; gems[2]=cn3; gems[3]=cn4;
+                 }
+ if(flag){
+     cout<<gems[0]<<" "<<gems[1]<<endl;
+     cout<<gems[2]<<" "<<gems[3];
+ }
+else
+    cout<<-1;
+ return 0;
+}

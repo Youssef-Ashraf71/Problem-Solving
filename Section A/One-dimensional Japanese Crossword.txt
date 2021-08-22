@@ -1,0 +1,44 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<cmath>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    fast;
+ll n,i=0,cnt=0,tmp=0,j=0;
+string s;
+ll p [100];
+cin>>n; cin>>s;
+while(i<n){
+    if (s[i]=='B') {
+        tmp++;
+        if (s[i + 1] == 'W') {
+            cnt++;
+            p[j] = tmp;
+            tmp=0;
+            j++;
+        }
+        else if(i==n-1 && s[i-1]!='W'){
+            cnt++;
+            p[j] = tmp;
+            j++;
+        }
+
+        i++;
+    }
+    else if(s[i]=='W') {
+        i++;
+    }
+    if(i==n-1){
+        if(s[i-1]=='W' && s[i]=='B')
+            cnt++;
+        p[j] = 1;
+    }
+}
+cout<<cnt<<endl;
+for(i=0;i<cnt;i++)
+    cout<<p[i]<<" ";
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<cmath>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    fast;
+    ll n,i,k=0,j=0,tmp=0,cnt=0 ;
+    cin>>n;
+    ll *p=new ll[n];
+    for(i=0;i<n;i++){
+        cin>>p[i];
+    }
+    ll sum=0;
+    for(i=0;i<n;i++){
+        sum=0;
+        for(j=0;j<n;j++) {
+            tmp = p[i];
+            if (j == k) {
+                continue;
+            }
+            sum += p[j];
+        }
+        k++;
+     if (sum%2==0)
+         cnt++;
+    }
+    cout<<cnt;
+    return 0;
+}

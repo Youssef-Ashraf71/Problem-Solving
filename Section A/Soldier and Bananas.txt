@@ -1,0 +1,17 @@
+#include<iostream>
+#include<algorithm>
+#include<iomanip>
+#define ll unsigned long long
+using namespace std ;
+int main() {
+ll k,n,w,i,tmp=0;
+cin>>k>>n>>w;
+for(i=1;i<=w;i++){
+    tmp+=i*k;
+}
+if(tmp>n)
+cout<<(tmp-n);
+else
+    cout<<0;
+    return 0;
+}

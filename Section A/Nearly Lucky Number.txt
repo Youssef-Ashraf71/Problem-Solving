@@ -1,0 +1,24 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<iomanip>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+string s;
+cin>>s;
+int len=s.size(),cnt4=0,cnt7=0;
+for(ll i=0;i<len;++i){
+    s[i]=s[i]-'0';
+    if(s[i]==4 )
+        cnt4++;
+    if(s[i]==7)
+        cnt7++;
+}
+if(cnt4+cnt7==4 || cnt4+cnt7==7)
+    cout<<"YES";
+else
+    cout<<"NO";
+return 0;
+}

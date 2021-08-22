@@ -1,0 +1,26 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<iomanip>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+string s;
+ ll n, m; cin>>n>>m;  ll count4=0,count7=0,tmp,i,j,cnt=0;
+for(i=1;i<=n;i++){
+    count4=0;count7=0;
+    cin>>s; ll size=s.size();
+    for(j=0;j<size;j++){
+        tmp=s[j]-'0';
+        if(tmp==4)
+            count4++;
+        if(tmp==7)
+            count7++;
+    }
+if(count4+count7<=m)
+cnt++;
+}
+cout<<cnt;
+return 0;
+}
