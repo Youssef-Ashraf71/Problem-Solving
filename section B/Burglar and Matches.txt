@@ -1,0 +1,51 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<iomanip>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+void swap(ll *xp, ll *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+void bubbleSort(ll x[],ll y[], ll n) {
+    int i, j;
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (y[j] < y[j + 1]) {
+                swap(&x[j], &x[j + 1]);
+                swap(&y[j], &y[j + 1]);
+            }
+        }
+    }
+}
+int main() {
+    fast;
+ll n,m,i,tmp=0,cn=0; cin>>n>>m;
+ll x[10000] ,y[1000];
+for(i=0;i<m;i++){
+    cin>>x[i]>>y[i];
+}
+    bubbleSort(x,y,m);
+//for(i=0;i<m;i++)
+//   cout<<x[i]<<" "<<y[i]<<endl;
+    for(i=0;i<m;i++) {
+        if(cn<n) {
+            if (x[i]+cn< n) {
+                tmp += (x[i] * y[i]);
+                cn += x[i];
+            }
+            else {
+                tmp += (n - cn) * y[i];
+                cn=n;
+            }
+        }
+        else break;
+    }
+
+cout<<tmp;
+ return 0;
+}

@@ -1,0 +1,44 @@
+#include<iostream>
+#include<algorithm>
+#include<set>
+#include<iomanip>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+ll n,m;
+cin>>n>>m;
+char c; cin>>c;
+char x [102][102];
+ll i,cnt=0,j;
+for(i=0;i<n;i++)
+    for(j=0;j<m;j++)
+        cin>>x[i][j];
+    if(n==1 && m==1){
+         cout<<0;
+         return 0;
+    }
+set<char> lol;
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < m; j++) {
+                if (x[i][j] == c) {
+                    if ( j!=m-1 && x[i][j + 1] != '.' && x[i][j + 1] !=c )
+                        lol.insert(x[i][j + 1]);
+                    if( j!=0 &&  x[i][j - 1] != '.' && x[i][j - 1] != c)
+                        lol.insert( x[i][j - 1]);
+                    if ( i!= n-1 && x[i + 1][j] != '.' && x[i + 1][j] !=c )
+                        lol.insert(x[i + 1][j]);
+                    if( i!=0 &&  x[i - 1][j] != '.' && x[i - 1][j] != c)
+                        lol.insert(x[i - 1][j]);
+                }
+            }
+        }
+        cout<<lol.size();
+//for(i=0;i<n;i++) {
+        //  for (j = 0; j < m; j++) {
+        //   cout << x[i][j];
+        //}
+        //cout<<endl;
+//}
+return 0;
+}

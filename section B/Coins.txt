@@ -1,0 +1,53 @@
+#include<iostream>
+#include<algorithm>
+#include<iomanip>
+#define ll unsigned long long
+using namespace std ;
+int main() {
+    string a,b,c;
+    cin>>a>>b>>c;
+    if((a=="A>B" || a=="B<A") || ( b=="A>B" || b=="B<A") || (c=="A>B" || c== "B<A")) {
+        if( (a=="B>C" || a=="C<B") ||  b=="B>C" || b=="C<B" || (c=="B>C" || c== "C<B") ){
+            if((a=="A>C" || a=="C<A") ||  b=="A>C" || b=="C<A" || (c=="A>C" || c== "C<A")){
+            cout<<"CBA";
+                return 0;
+            }
+        }
+        else if( (a=="A<C" || a=="C>A") ||  b=="A<C" || b=="C>A" || (c=="A<C" || c== "C>A")  )
+            if((a=="B<C" || a=="C>B") || ( b=="B<C" || b=="C>B") || (c=="B<C" || c== "C>B")){
+            cout<<"BAC";
+                return 0;
+            }
+    }
+       if((a=="B>C" || a=="C<B") || ( b=="B>C" || b=="C<B") || (c=="B>C" || c== "C<B")) {
+        if( (a=="C>A" || a=="A<C") ||  b=="C>A"  || b=="A<C" || (c=="C>A" || c== "A<C") ){
+            if((a=="B>A" || a=="A<B") ||  b=="B>A" || b=="A<B" || (c=="B>A"  || c== "A<B") ){
+            cout<<"ACB";
+                return 0;
+            }
+        }
+    }
+      if((a=="B<C" || a=="C>B") || ( b=="B<C" || b=="C>B") || (c=="B<C" || c== "C>B")){
+        if((a=="B>A" || a=="A<B") || ( b=="B>A"|| b=="A<B") || (c=="B>A"|| c== "A<B") )
+            if ((a=="A<C" || a=="C>A") || ( b=="A<C" || b=="C>A") || (c=="A<C" || c== "C>A") ){
+            cout<<"ABC";
+                return 0;
+            }
+    }
+     if((a=="A>C" || a=="C<A") || ( b=="A>C" || b=="C<A") || (c=="A>C" || c== "C<A")){
+        if((a=="C>B" || a=="B<C") || ( b=="C>B"|| b=="B<C") || (c=="C>B"|| c== "B<C") )
+            if ((a=="A>B" || a=="B<A") || ( b=="A>B"|| b=="B<A") || (c=="A>B"|| c== "B<A") ){
+            cout<<"BCA";
+                return 0;
+            }
+    }
+      if((a=="B>A" || a=="A<B") || ( b=="B>A" || b=="A<B") || (c=="B>A" || c== "A<B")) {
+        if ((a == "A>C" || a == "C<A") || (b == "A>C" || b == "C<A") || (c == "A>C" || c == "C<A"))
+            if ((a == "B>C" || a == "C<B") || (b == "B>C" || b == "C<B") || (c == "B>C" || c == "C<B")) {
+                cout << "CAB";
+                return 0;
+            }
+    }
+        cout<<"Impossible";
+    return 0;
+}
