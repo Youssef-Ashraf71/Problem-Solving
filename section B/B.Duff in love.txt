@@ -1,0 +1,107 @@
+//https://codeforces.com/contest/588/problem/B
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<cmath>
+#include <cstring>
+#include <functional>
+#include<unordered_map>
+#include <sstream>
+#include<map>
+#include<set>
+#include <iomanip>
+#include<vector>
+#include<valarray>
+#define ll   long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+//#include<bits/stdc++.h>
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sz(v) (int) v.size()
+ll REMINDER = 1000000007;
+
+bool ashfchk(ll n){
+    ll i;
+    ll x=sqrt(n);
+    if(x*x==n) return false;
+    for(i=2;i*i<=n;i++){
+        if(n%i==0){
+            x=sqrt(i);
+            if(x*x==i) return false;
+            x=sqrt(n/i);
+            if(x*x==n/i) return false;
+        }
+    }
+    return true;
+}
+void solve() {
+    ll n,max=0, i = 0, j,k, cnt = 0;
+cin>>n;
+if(n==1){
+    cout<<1 ;
+    return;
+}
+vector<ll> v;
+    for(i=1;i*i<=n;i++){
+        if(n%i==0){
+            v.PB(i);
+            if(i!=n/i)
+                v.PB(n/i);
+        }
+    }
+sort(all(v));
+reverse(all(v));
+ll p;
+    for(i=0;i<v.size()-1;i++){
+         ll c=v[i];
+        ll y=sqrt(v[i]);
+        if(y*y==c){
+            p=1;
+            break;
+        }
+    }
+    if(!p){
+        cout<<n;
+        return;
+    }
+
+    for(i=0;i<v.size()-1;i++){
+        bool bb=ashfchk(v[i]);
+        if(bb){
+            cout<<v[i];
+            return;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+
+    ll tt = 1; // cin >> tt;
+    while (tt--)
+    {
+        solve();
+
+    }
+
+    return 0;
+}
