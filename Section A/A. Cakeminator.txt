@@ -1,0 +1,94 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<cmath>
+#include <cstring>
+#include <functional>
+#include<unordered_map>
+#include <sstream>
+#include<map>
+#include<set>
+#include <iomanip>
+#include<vector>
+#include<valarray>
+#define ll   long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+//#include<bits/stdc++.h>
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sz(v) (int) v.size()
+ll REMINDER = 1000000007;
+void solve() {
+ ll r,c,i,j,cnt=0;
+cin>>r>>c;
+char **x=new char*[r]; bool flag1 =true;
+for(i=0;i<r;i++){
+    x[i]=new char [c];
+}
+for(i=0;i<r;i++){
+    for(j=0;j<c;j++){
+        cin>>x[i][j];
+    }
+}
+    for(i=0;i<r;i++){
+        flag1=true;
+        for(j=0;j<c;j++){
+  if(x[i][j]=='S'){
+      flag1=false;
+  }
+        }
+        if(flag1) {
+            for (j = 0; j < c; j++) {
+                x[i][j]='l';
+            }
+            cnt+=c;
+        }
+    }
+    for(i=0;i<c;i++){
+        flag1=true;
+        for(j=0;j<r;j++){
+            if(x[j][i]=='S'){
+                flag1=false;
+            }
+        }
+        if(flag1) {
+            for(j=0;j<r;j++){
+                if(x[j][i]=='.'){
+                    cnt++;
+                }
+            }
+        }
+    }
+
+   
+
+
+cout<<cnt;
+
+ }
+
+
+
+
+
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+
+    ll tt = 1;  //cin >> tt;
+    while (tt--)
+    {
+        solve();
+
+    }
+
+    return 0;
+}
