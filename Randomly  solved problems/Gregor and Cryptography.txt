@@ -1,0 +1,14 @@
+#include<iostream>
+#include<algorithm>
+#include<iomanip>
+#define ll unsigned long long
+using namespace std ;
+int main() {
+ll t,p;
+cin>>t;
+while(t--){
+    cin>>p;
+    cout<<16/8<<" "<<--p<<endl;
+}
+return 0;
+}

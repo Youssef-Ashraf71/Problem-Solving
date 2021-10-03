@@ -1,0 +1,20 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<set>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    ll t;
+    cin>>t;
+    while(t--) {
+        ll l, r;
+       cin>>l>>r;
+        if(r/2+1<l)
+            cout<<r%l<<endl;
+        else
+            cout<<r%(r/2+1)<<endl;
+    }
+    return 0;
+}

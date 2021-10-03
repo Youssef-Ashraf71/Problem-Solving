@@ -1,0 +1,25 @@
+#include<iostream>
+#include<algorithm>
+#include<iomanip>
+#define ll unsigned long long
+using namespace std ;
+int main() {
+ll t,n,tmp;
+cin>>t;
+while(t>=1){
+    cin>>n;
+    if(n<=6){
+        cout<<15<<endl;
+    }
+    else if ( n%2==1){
+        tmp=n+1;
+        tmp=(tmp*5)/2;
+        cout<<tmp<<endl;
+    }
+    else{
+        cout<<(n*5)/2<<endl;
+    }
+    t--;
+}
+    return 0;
+}

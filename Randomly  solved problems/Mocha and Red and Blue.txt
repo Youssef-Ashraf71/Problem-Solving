@@ -1,0 +1,45 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<iomanip>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+ll t,n,i,j;
+cin>>t;
+while(t--){
+cin>>n; string s; cin>>s;
+j=0;
+    if (n == 1) {
+        if (s == "?") {
+            s = "B";
+            cout << s[0];
+        } else
+            cout << s[0];
+        cout << endl;
+    }else {
+        for (i = 0; i < n; i++) {
+            if (s[i] != '?') {
+                j = i;
+                break;
+            }
+        }
+        for(int i=j-1;i>=0;i--){
+            s[i]=(s[i+1]=='R'?'B':'R');
+        }
+        for (i =j; i < n; i++) {
+            if(s[i]=='?') {
+                if (s[i - 1] == 'B')
+                    s[i] = 'R';
+                else
+                    s[i] = 'B';
+            }
+        }
+        for (i = 0; i < n; i++)
+            cout << s[i];
+        cout << "\n";
+    }
+}
+return 0;
+}
