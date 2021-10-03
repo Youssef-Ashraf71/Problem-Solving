@@ -1,0 +1,68 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<cmath>
+#include <cstring>
+#include <functional>
+#include<unordered_map>
+#include <sstream>
+#include<map>
+#include<set>
+#include <iomanip>
+#include<vector>
+#include<valarray>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+//#include<bits/stdc++.h>
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sz(v) (int) v.size()
+ll REMINDER = 1000000007;
+void solve() {
+    ll n,d1=200,d2=200,d3=200,d4=200; int i_min,i_max, i = 0, j = 0, k = 0, cnt = 0;
+cin>>n;
+ll *x = new ll[n];
+for(i=0;i<n;i++)
+    cin>>x[i];
+for(i=0;i<n;i++){
+if(x[i]==1)
+    i_min=i;
+if(x[i]==n)
+    i_max=i;
+}
+ll  right=max(i_max,i_min);
+ll  left = min(i_max,i_min);
+d1=llabs(n-1-left);
+d2=llabs(left);
+d3=llabs(right);
+d4=llabs(n-1-right);
+cout<<max(d1,max(d2,max(d3,d4)));
+}
+
+
+
+
+
+
+
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+
+    ll test_case=1 ;// cin >> test_case;
+    while (test_case--)
+    {
+        solve();
+
+    }
+
+    return 0;
+}
