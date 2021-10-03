@@ -1,0 +1,50 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+int main() {
+    int t, n, k, i, j,f=1;
+
+    cin>>t;
+    for(f=1;f<=t;f++){
+        cin >> n >> k;
+        int size=0;
+        for(i=1;i<=n-1;i++)
+            size+=i;
+
+        int *p = new int[n];
+        int *l = new int[n];
+        for (i = 0; i < n; i++)
+            cin >> p[i];
+        int sum;
+        for (i = 0; i < n; i++) {
+            sum = 0;
+            for (j = 0; j < n; j++) {
+                if (j != i)
+                    sum += p[j];
+            }
+            l[i] = sum;
+        }
+        int *diff=new int [size];
+        int cou=0;
+
+        for(i=0;i<n;i++){
+            for (j=i+1;j<n;j++){
+                diff[cou]= abs(l[j]-l[i]);
+                cou++;
+            }
+        }
+        //   for(i=0;i<size;i++){
+        //   cout<<diff[i]<<" ";
+        //   }
+
+        int max=diff[0];
+        for(i=0;i<size;i++)
+            if(diff[i]>max)
+                max=diff[i];
+if(n==1)
+    max=0;
+        cout<<max<<endl;
+    }
+    return 0 ;
+}
