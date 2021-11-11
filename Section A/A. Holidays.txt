@@ -1,0 +1,97 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<cmath>
+#include <cstring>
+#include <functional>
+#include<unordered_map>
+#include <sstream>
+#include<map>
+#include<set>
+#include <iomanip>
+#include<vector>
+#include<valarray>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+//#include<bits/stdc++.h>
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sz(v) (int) v.size()
+ll REMINDER = 1000000007;
+void solve() {
+    ll n,i = 0, j = 0,tmp=0,cnt=0,sum=0;
+cin>>n;
+if(n<=5) {
+    if (n == 1) {
+        cout << 0 << " " << 1 << endl;
+        return;
+    }
+    if (n == 0) {
+        cout << 0 << " " << 0 << endl;
+        return;
+    }
+    else {
+        cout << 0 << " " << 2 << endl;
+        return;
+    }
+}
+else if(n<=7){
+cout<<n-5<<" "<<2;
+    return;
+}
+
+
+if(n%7==0) {
+    tmp = n / 7;
+    cout << n * 2 / 7 << " " << n * 2 / 7;
+    return;
+}
+else{
+    while(n>7){
+        n-=7;
+        sum+=2;
+    }
+    if(n>5) {
+        cout << sum + 7 - n << " " << sum + 2;
+        return;
+    }
+    else{
+        cout<<sum<<" "<<sum+min(2,int(n));
+        return;
+    }
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+
+    ll test_case=1 ; //cin >> test_case;
+    while (test_case--)
+    {
+        solve();
+
+    }
+
+    return 0;
+}

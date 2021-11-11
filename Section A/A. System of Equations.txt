@@ -1,0 +1,63 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<cmath>
+#include <cstring>
+#include <functional>
+#include<unordered_map>
+#include <sstream>
+#include<map>
+#include<set>
+#include <iomanip>
+#include<vector>
+#include<valarray>
+#include<deque>
+#define ll   long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+//#include<bits/stdc++.h>
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sz(v) (int) v.size()
+ll REMINDER = 1000000007;
+void solve() {
+    ll n,m, i = 0, j = 0, tmp = 0;
+    cin>>n>>m;
+ll x[1001];
+for(i=0;i<1000;i++)
+    x[i]=i;
+x[1000]=1000;
+for(i=0;i<1000;i++){
+    for(j=0;j<1000;j++){
+        ll a=x[i];
+        ll b=x[j];
+        if((a*a+b==n) && (a+b*b==m))
+            tmp++;
+        if((a*a+b>n) && (a+b*b>m))
+            break;
+    }
+}
+cout<<tmp;
+
+
+}
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+
+    ll test_case=1 ; //cin >> test_case;
+    while (test_case--)
+    {
+        solve();
+
+    }
+
+    return 0;
+}

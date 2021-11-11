@@ -1,0 +1,30 @@
+#include <iostream>
+#include<string>
+#include<vector>
+using namespace std;
+#define ll long long
+#define st string
+int main() {
+  ll n ,i,ceven=0,codd=0;
+  cin>>n;
+  vector<ll> x(n);
+  vector <ll> evens ;
+  vector <ll> odds;
+  for(i=0;i<n;i++){
+  	cin>>x[i];
+  	if(x[i]%2==0){
+  	ceven++;
+  	evens.push_back(i+1);
+  	}
+  	else{
+  		codd++;
+  		odds.push_back(i+1);
+  	}
+  }
+ 
+  if(evens.size()>odds.size())
+  cout<<odds[0];
+  else
+  cout<<evens[0];
+return 0;
+}

@@ -1,0 +1,71 @@
+
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<cmath>
+#include <cstring>
+#include <functional>
+#include<unordered_map>
+#include <sstream>
+#include<map>
+#include<set>
+#include <iomanip>
+#include<vector>
+#include<valarray>
+#include<deque>
+#define ll   long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+//#include<bits/stdc++.h>
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sortit(name) sort(name.begin(),name.end())
+#define sz(v) (int) v.size()
+ll REMINDER = 1000000007;
+
+void solve() {
+ll  n, i = 0, j = 0,cnt=0;
+cin>>n;
+vector<ll>x(n);
+ll lli,llj;
+for(i=0;i<n;i++)
+    cin>>x[i];
+
+ll mini=20000;
+for(i=0;i<n-1;i++){
+if(llabs(x[i]-x[i+1])<mini){
+ mini=llabs(x[i]-x[i+1]);
+ lli=i;
+ llj=i+1;
+}
+}
+    if(llabs(x[n-1]-x[0])<mini){
+        mini=llabs(x[n-1]-x[0]);
+        lli=n-1;
+        llj=0;
+    }
+
+cout<<lli+1<<" "<<llj+1;
+
+}
+
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+
+    ll test_case=1 ; //cin >> test_case;
+    while (test_case--)
+    {
+        solve();
+
+    }
+
+    return 0;
+}
