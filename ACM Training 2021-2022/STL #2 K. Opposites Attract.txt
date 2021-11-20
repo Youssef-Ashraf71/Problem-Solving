@@ -1,0 +1,26 @@
+#include<iostream>
+#include <map>
+using  namespace std ;
+int main(){
+    long long n;
+    cin >> n;
+    map<int, long long>x;
+    for (int i = 0; i < n; i++)
+    {
+        long long tmp;
+        cin >> tmp;
+        x[tmp]++;
+    }
+    long long count = 0;
+    for (auto& i : x)
+    {
+        if (i.first)
+        {
+            count += (i.second * x[-i.first]); // get the no of pairs of each couple
+            x[-i.first] = 0; // prevent paitiry of i &j
+        }
+    }
+    count += (x[0] * (x[0] - 1) / 2); // combinations of zeros pairs
+    cout << count;
+return 0;
+}

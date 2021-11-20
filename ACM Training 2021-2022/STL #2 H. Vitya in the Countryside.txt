@@ -1,0 +1,116 @@
+/*
+       ____            ___________
+      /\   \          |
+     /  \   \         |
+    /    \   \        |___________
+   /______\   \                  |
+  /        \   \                 |
+ /          \  /       __________|
+/            \/
+
+ ___  ___              F
+|\  \|\   \            F
+\ \  \_\   \           F
+ \ \ ___    \          F
+  \  \ \\ \  \         F
+   \  \__\\ \_\        F
+    \ |__| \|__|       F
+
+ */
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<cmath>
+#include <cstring>
+#include <functional>
+#include<unordered_map>
+#include <sstream>
+#include<map>
+#include<set>
+#include <iomanip>
+#include<vector>
+#include<valarray>
+#include<queue>
+#define ll unsigned long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+//#include<bits/stdc++.h>
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sz(v) (int) v.size()
+ll REMINDER = 1000000007;
+/*
+int n, m;
+char grid[1001][1001];
+int vis[1001][1001];
+int di[] = {0, 0, 1, 1, 1, -1, -1, -1};
+int dj[] = {1, -1, 0, 1, -1, 0, 1, -1};
+ */
+void solve() {
+ll n,i,j,cnt=0;
+cin>>n;
+if(n==2){
+    ll a,b;
+    cin>>a>>b;
+    if(b==15){
+        cout<<"DOWN";
+        return;
+    }
+    if(a==1 && b==0){
+        cout<<"UP";
+        return;
+    }
+    if(a>b)
+        cout<<"DOWN";
+    else if(a<b)
+        cout<<"UP";
+    return;
+}
+if(n==1){
+    ll a; cin>>a;
+    if(a==15){
+        cout<<"DOWN";
+    }
+    else if(a==0){
+        cout<<"UP";
+    }
+    else
+    cout<<-1;
+    return;
+}
+vector<ll> x(n);
+ll moon[30]={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+for(auto &it:x)
+    cin>>it;
+bool flag=0;
+ll a,b;
+a=x[n-2];b=x[n-1];
+    if(a<b && b!=15)
+        cout<<"UP";
+    else if(a<b && b==15)
+        cout<<"DOWN";
+    else if(a>b && b!=0)
+        cout<<"DOWN";
+    else if(a>b && b==0)
+        cout<<"UP";
+}
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+
+    ll test_case=1 ; //cin >> test_case;
+    while (test_case--)
+    {
+        solve();
+
+    }
+
+    return 0;
+}

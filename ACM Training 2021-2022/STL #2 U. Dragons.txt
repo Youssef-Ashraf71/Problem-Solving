@@ -1,0 +1,45 @@
+#include<iostream>
+#include<algorithm>
+#include<iomanip>
+#define ll unsigned long long
+using namespace std ;
+void swap(ll *xp, ll *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+void bubbleSort(ll x[],ll y[], ll n) {
+    int i, j;
+    for (i = 0; i < n - 1; i++) {
+        // Last i elements are already in place
+        for (j = 0; j < n - i - 1; j++) {
+            if (x[j] > x[j + 1]) {
+                swap(&x[j], &x[j + 1]);
+                swap(&y[j], &y[j + 1]);
+            }
+        }
+    }
+}
+int main() {
+ll s , n,i,tmp=0;
+cin>>s>>n;
+ll x[1000] ,y[1000];
+for(i=0;i<n;i++){
+    cin>>x[i]>>y[i];
+}
+    bubbleSort(x,y,n);
+for(i=0;i<n;i++){
+    if(s>x[i]) {
+        s+=y[i];
+        tmp++;
+    }
+}
+if (tmp==n){
+    cout<<"YES";
+    return 0;
+}
+else
+cout<<"NO";
+return 0;
+}

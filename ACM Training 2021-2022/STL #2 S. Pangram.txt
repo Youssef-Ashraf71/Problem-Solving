@@ -1,0 +1,109 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<set>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+    ll n,i,sum=0;
+    string s;
+    ll sums[100];
+cin>>n;
+    cin>>s;
+if(n<26){
+    cout<<"NO";
+    return 0;
+}
+char alpha[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+for(i=0;i<26;i++)
+    sums[i]=0;
+for(i=0;i<n;i++){
+if(s[i]==alpha[0] || s[i]==toupper(alpha[0])){
+    sums[0]=1;
+}
+    if(s[i]==alpha[1] || s[i]==toupper(alpha[1])){
+        sums[1]=1;
+    }
+    if(s[i]==alpha[2] || s[i]==toupper(alpha[2])){
+        sums[2]=1;
+    }
+    if(s[i]==alpha[3] || s[i]==toupper(alpha[3])){
+        sums[3]=1;
+    }
+    if(s[i]==alpha[4] || s[i]==toupper(alpha[4])){
+        sums[4]=1;
+    }
+    if(s[i]==alpha[5] || s[i]==toupper(alpha[5])){
+        sums[5]=1;
+    }
+    if(s[i]==alpha[6] || s[i]==toupper(alpha[6])){
+        sums[6]=1;
+    }
+    if(s[i]==alpha[7] || s[i]==toupper(alpha[7])){
+        sums[7]=1;
+    }
+    if(s[i]==alpha[8] || s[i]==toupper(alpha[8])){
+        sums[8]=1;
+    }
+    if(s[i]==alpha[9] || s[i]==toupper(alpha[9])){
+        sums[9]=1;
+    }
+    if(s[i]==alpha[10] || s[i]==toupper(alpha[10])){
+        sums[10]=1;
+    }
+    if(s[i]==alpha[11] || s[i]==toupper(alpha[11])){
+        sums[11]=1;
+    }
+    if(s[i]==alpha[12] || s[i]==toupper(alpha[12])){
+        sums[12]=1;
+    }
+    if(s[i]==alpha[13] || s[i]==toupper(alpha[13])){
+        sums[13]=1;
+    }
+    if(s[i]==alpha[14] || s[i]==toupper(alpha[14])){
+        sums[14]=1;
+    }
+    if(s[i]==alpha[15] || s[i]==toupper(alpha[15])){
+        sums[15]=1;
+    }
+    if(s[i]==alpha[16] || s[i]==toupper(alpha[16])){
+        sums[16]=1;
+    }
+    if(s[i]==alpha[17] || s[i]==toupper(alpha[17])){
+        sums[17]=1;
+    }
+    if(s[i]==alpha[18] || s[i]==toupper(alpha[18])){
+        sums[18]=1;
+    }
+    if(s[i]==alpha[19] || s[i]==toupper(alpha[19])){
+        sums[19]=1;
+    }
+    if(s[i]==alpha[20] || s[i]==toupper(alpha[20])){
+        sums[20]=1;
+    }
+    if(s[i]==alpha[21] || s[i]==toupper(alpha[21])){
+        sums[21]=1;
+    }
+    if(s[i]==alpha[22] || s[i]==toupper(alpha[22])){
+        sums[22]=1;
+    }
+    if(s[i]==alpha[23] || s[i]==toupper(alpha[23])){
+        sums[23]=1;
+    }
+    if(s[i]==alpha[24] || s[i]==toupper(alpha[24])){
+        sums[24]=1;
+    }
+    if(s[i]==alpha[25] || s[i]==toupper(alpha[25])){
+        sums[25]=1;
+    }
+}
+for(i=0;i<26;i++) {
+    sum += sums[i];
+}
+if(sum==26)
+    cout<<"YES";
+else
+    cout<<"NO";
+    return 0;
+}
