@@ -1,0 +1,27 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<iomanip>
+#define ll  long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std ;
+int main() {
+ll n,i; cin>>n; n++;
+ll d[4];
+bool flag=true;
+while(flag==true) {
+    ll tmp=n/10; d[3]=n%10;
+    for (i = 2; i >= 0; i--) {
+        d[i] = tmp %10;
+        tmp=tmp/10;
+    }
+    if (d[0] == d[1] || d[0] == d[2] || d[0] == d[3] || d[1] == d[2] || d[1] == d[3] || d[2] == d[3]) {
+        n++;
+    }
+    else {
+        flag = false;
+    }
+}
+cout<<n;
+return 0;
+}
