@@ -53,35 +53,53 @@ int vis[1001][1001];
 int di[] = {0, 0, 1, 1, 1, -1, -1, -1};
 int dj[] = {1, -1, 0, 1, -1, 0, 1, -1};
 */
-double Dist(double x1,double y1,double x2,double y2){
-    return  sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-}
 void solve() {
-    ll  n, m, i, j, len, k, cnt = 1;
-    cin>>n;
-    vector<ll>mon(n);
-for(auto&it :mon){
-    cin>>it;
-}
-
-ll mxsz=1;
-    for(i=0;i<n-1;i++){
-        if(mon[i+1]>=mon[i]) {
-            cnt++;
-            mxsz=max(mxsz,cnt);
-        }
-        else{
-            cnt=1;
+    ll n, l, r, k, i, j, cnt=0 ,pos=0,neg=0,sump=0,sumn=0;
+    cin >> n;
+    vector<pair<ll,ll>> po,ne;
+    for (i = 0; i < n; i++) {
+        ll in1,in2;
+             cin >> in1>>in2;
+        if (in1 > 0) {
+            sump+=in2;
+            po.emplace_back(in1,in2);
+            pos++;
+        } else {
+            sumn+=in2;
+            ne.emplace_back(in1, in2);
+            neg++;
         }
     }
-cout<<mxsz;
+    sort(po.begin(),po.end());
+    sort(ne.begin(),ne.end(),greater<>());
+
+
+
+
+if(pos==neg){
+    cout<<sump+sumn;
+}
+else if(pos>neg){
+    sump=0;
+    for(i=0;i<neg+1;i++){
+        sump+=po[i].second;
+    }
+    cout<<sump+sumn;
+}
+else if(pos<neg){
+    sumn=0;
+    for(i=0;i<pos+1;i++){
+        sumn+=ne[i].second;
+    }
+    cout<<sump+sumn;
+}
 }
 int main()
 {
     ASHF; // ashf gamed tenen
     //freopen("window.in", "r", stdin);   // for file reading
 
-    ll test_case=1 ;// cin >> test_case;
+    ll test_case=1 ;//cin >> test_case;
     while (test_case--)
     {
         solve();

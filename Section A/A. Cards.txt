@@ -31,8 +31,8 @@
 #include<vector>
 #include<valarray>
 #include<queue>
-#define ll long long
-#define ASHF ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+#define ll unsigned long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
 //#include<bits/stdc++.h>
 using namespace std;
 #define REPi(a,b) for (int i = a; i <= b; i++)
@@ -49,39 +49,33 @@ ll REMINDER = 1000000007;
 int n, m;
 char grid[1001][1001];
 int vis[1001][1001];
-1
+
 int di[] = {0, 0, 1, 1, 1, -1, -1, -1};
 int dj[] = {1, -1, 0, 1, -1, 0, 1, -1};
 */
-double Dist(double x1,double y1,double x2,double y2){
-    return  sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-}
 void solve() {
-    ll  n, m, i, j, len, k, cnt = 1;
-    cin>>n;
-    vector<ll>mon(n);
-for(auto&it :mon){
-    cin>>it;
+ ll  n,i,j;
+cin>>n;
+ll times=n/2;
+vector<pair<ll,ll>> x(n);
+vector<ll>sums;
+for(i=0;i<n;i++){
+    cin>>x[i].first;
+    x[i].second=i+1;
+}
+sort(x.begin(),x.end());
+for(i=0;i<n/2;i++){
+    cout<<x[i].second<<" "<<x[n-i-1].second<<endl;
 }
 
-ll mxsz=1;
-    for(i=0;i<n-1;i++){
-        if(mon[i+1]>=mon[i]) {
-            cnt++;
-            mxsz=max(mxsz,cnt);
-        }
-        else{
-            cnt=1;
-        }
-    }
-cout<<mxsz;
+
 }
 int main()
 {
-    ASHF; // ashf gamed tenen
+    fast; // ashf gamed tenen
     //freopen("window.in", "r", stdin);   // for file reading
 
-    ll test_case=1 ;// cin >> test_case;
+    ll test_case=1 ; //cin >> test_case;
     while (test_case--)
     {
         solve();

@@ -53,35 +53,24 @@ int vis[1001][1001];
 int di[] = {0, 0, 1, 1, 1, -1, -1, -1};
 int dj[] = {1, -1, 0, 1, -1, 0, 1, -1};
 */
-double Dist(double x1,double y1,double x2,double y2){
-    return  sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-}
 void solve() {
-    ll  n, m, i, j, len, k, cnt = 1;
-    cin>>n;
-    vector<ll>mon(n);
-for(auto&it :mon){
-    cin>>it;
-}
-
-ll mxsz=1;
-    for(i=0;i<n-1;i++){
-        if(mon[i+1]>=mon[i]) {
-            cnt++;
-            mxsz=max(mxsz,cnt);
-        }
-        else{
-            cnt=1;
-        }
+    int num ,i;
+    cin>>num;
+    for ( i=1;i<=num;i++){
+        string s;
+        cin>>s;
+        if(s.size()<=10)
+            cout<<s<<endl;
+        else
+            cout<<s[0]<<s.size()-2<<s[s.size()-1]<<endl;
     }
-cout<<mxsz;
 }
 int main()
 {
     ASHF; // ashf gamed tenen
     //freopen("window.in", "r", stdin);   // for file reading
 
-    ll test_case=1 ;// cin >> test_case;
+    ll test_case=1 ;//cin >> test_case;
     while (test_case--)
     {
         solve();
