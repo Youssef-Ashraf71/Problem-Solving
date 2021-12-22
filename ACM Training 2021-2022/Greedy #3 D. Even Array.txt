@@ -1,0 +1,94 @@
+/*
+       ____            ___________
+      /\   \          |
+     /  \   \         |
+    /    \   \        |___________
+   /______\   \                  |
+  /        \   \                 |
+ /          \  /       __________|
+/            \/
+
+ ___  ___              F
+|\  \|\   \            F
+\ \  \_\   \           F
+ \ \ ___    \          F
+  \  \ \\ \  \         F
+   \  \__\\ \_\        F
+    \ |__| \|__|       F
+
+ */
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<cmath>
+#include <cstring>
+#include <functional>
+#include<unordered_map>
+#include <sstream>
+#include<map>
+#include<set>
+#include <iomanip>
+#include<vector>
+#include<valarray>
+#include<queue>
+#define ll unsigned long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+//#include<bits/stdc++.h>
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sz(v) (int) v.size()
+ll REMINDER = 1000000007;
+/*
+int n, m;
+char grid[1001][1001];
+int vis[1001][1001];
+
+int di[] = {0, 0, 1, 1, 1, -1, -1, -1};
+int dj[] = {1, -1, 0, 1, -1, 0, 1, -1};
+*/
+void solve() {
+ ll  n,i,j; ll n_odd=0 ,n_even=0;
+cin>>n;
+vector<ll> x(n);
+for(auto &it:x){
+    cin>>it;
+}
+for(i=0;i<n;i++){
+    if(i%2!=x[i]%2){
+   if(x[i]%2){
+       n_odd++;
+   }
+   else
+       n_even++;
+    }
+}
+ //cout<<pairs.size()<<endl;
+if(n_odd==n_even){
+  cout<<n_even<<endl;
+}
+else
+    cout<<-1<<endl;
+
+
+}
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+
+    ll test_case=1 ; cin >> test_case;
+    while (test_case--)
+    {
+        solve();
+
+    }
+
+    return 0;
+}
