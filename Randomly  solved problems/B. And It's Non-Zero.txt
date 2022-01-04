@@ -1,0 +1,85 @@
+/*
+       ____            ___________
+      /\   \          |
+     /  \   \         |
+    /    \   \        |___________
+   /______\   \                  |
+  /        \   \                 |
+ /          \  /       __________|
+/            \/
+
+ ___  ___              F
+|\  \|\   \            F
+\ \  \_\   \           F
+ \ \ ___    \          F
+  \  \ \\ \  \         F
+   \  \__\\ \_\        F
+    \ |__| \|__|       F
+
+ */
+#include <bits/stdc++.h>
+#define ll long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sz(v) (int) v.size()
+const int N = 1e6 + 50,NN = 105, mod = 1e9 + 7;
+ll REMINDER = 1000000007;
+/*
+int n, m;
+char grid[1001][1001];
+int vis[1001][1001];
+1
+int di[] = {0, 0, 1, 1, 1, -1, -1, -1};
+int dj[] = {1, -1, 0, 1, -1, 0, 1, -1};
+*/
+int Gensums[200001][20]; // constrains for len 1>>2*10^5 && constrains for bits log(r-l)+1 so  max num could be rep in 20 bits
+void solve() {
+    int l, r; int i;
+    cin >> l >> r;
+    int maxi = 0;
+    for(i=0;i<20;i++){
+        //  cout<<Dp[r][i]<<" "<<Dp[l-1][i]<<" \n";
+        maxi = max(maxi, Gensums[r][i] - Gensums[l - 1][i]);
+    }
+    cout << (r - l + 1 - maxi) << endl; //so  i get the number of ones
+}
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+    int i,j,cnt=0;
+    ll test_case=1 ;  cin >> test_case;
+    for(i=0;i<200001;i++){
+        int  check = i, idx = 0;
+        while (check){
+            Gensums[i][idx++] += (check % 2);
+            check /= 2;
+        }
+        for(j=0;j<20;j++){
+            if(i)
+                Gensums[i][j] += Gensums[i - 1][j];
+        }
+    }
+    /*
+    for(i=0;i<200001;i++){
+        for(j=0;j<20;j++){
+       cout<<Gensums[i][j];
+        }
+        cout<<endl;
+    }
+     */
+
+    while (test_case--)
+    {
+        solve();
+    }
+    return 0;
+}
