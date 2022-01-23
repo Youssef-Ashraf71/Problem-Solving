@@ -1,0 +1,116 @@
+/*
+       ____            ___________
+      /\   \          |
+     /  \   \         |
+    /    \   \        |___________
+   /______\   \                  |
+  /        \   \                 |
+ /          \  /       __________|
+/            \/
+
+ ___  ___              F
+|\  \|\   \            F
+\ \  \_\   \           F
+ \ \ ___    \          F
+  \  \ \\ \  \         F
+   \  \__\\ \_\        F
+    \ |__| \|__|       F
+
+ */
+#include <bits/stdc++.h>
+#include <unordered_map>
+#include<unordered_set>
+#define ll long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);  cout.tie(0);
+using namespace std;
+#define REPi(a,b) for (int i = a; i <= b; i++)
+#define REPj(a,b) for (int j = a; j <= b; j++)
+#define genMod(x,Mod) (x<0)?(x % Mod + Mod) : (x % Mod)
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define all(v) v.begin(),v.end()
+#define sz(v) (int) v.size()
+const int N = 1e6 + 50,NN = 105, mod = 1e9 + 7;
+ll REMINDER = 1000000007;
+/*
+int n, m;
+char grid[1001][1001];
+int vis[1001][1001];
+1
+int di[] = {0, 0, 1, 1, 1, -1, -1, -1};
+int dj[] = {1, -1, 0, 1, -1, 0, 1, -1};
+*/\
+void solve() {
+    ll n, xa, ya, k, i, j = 0, sum = 0, cnt = 0;
+    ll xo = 0, yo = 0;
+    ll dx = 1, dy = 1;
+    cin >> xa >> ya;
+    bool flag = 0;
+    i = 0;
+    vector<pair<ll, ll>> pa;
+    pa.emplace_back(make_pair(0,0));
+    while (pa.size() <= 1000) {
+        if (i % 2 == 0) {
+            xo += dx;
+            if (dx > 0)
+                dx++;
+            if (dx < 0)
+                dx--;
+            dx = -dx;
+            cnt++;
+            //   cout<<1<<" "<<xo<<" "<<yo<<endl;
+        } else {
+            yo += dy;
+            if (dy > 0)
+                dy++;
+            if (dy < 0)
+                dy--;
+            dy = -dy;
+            cnt++;
+            // cout<<2<<" "<<xo<<" "<<yo<<endl;
+        }
+        i++;
+        pa.emplace_back((make_pair(xo, yo)));
+    }
+    pair<ll, ll> p(xa, ya);
+    for (i = 0; i < pa.size(); i++) {
+        if (xa == pa[i].first && ya == pa[i].second) {
+            cout <<max(i - 1,(ll) 0);
+            return;
+        }
+    }
+    for (i = 0; i < pa.size() - 1; i++) {
+        int x1 = pa[i].first, y1 = pa[i].second;
+        int x2 = pa[i + 1].first, y2 = pa[i + 1].second;
+        if (p.second == y1 && p.second == y2) {
+            if (p.first >= min(x1, x2) && p.first <= max(x1, x2)) {
+                cout << i << endl;
+            }
+        }
+        if (p.first == x1 && p.first == x2){
+            if (p.second >= min(y1,y2) && p.second <= max(y1,y2)) {
+                cout << i<<endl;
+            }
+        }
+    }
+
+    /*for (i = 0; i < pa.size(); i++) {
+            cout << pa[i].first << "," << pa[i].second << endl;
+            //while(xa!=pa[i].first || ya!=pa[i].second)
+            //  cnt++;
+        }*/
+    }
+
+int main()
+{
+    fast; // ashf gamed tenen
+    //freopen("window.in", "r", stdin);   // for file reading
+    ll test_case=1 ; //cin >> test_case;
+    while (test_case--)
+    {
+        solve();
+    }
+    return 0;
+}
