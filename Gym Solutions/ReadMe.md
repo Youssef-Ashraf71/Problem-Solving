@@ -1,4 +1,5 @@
-### Our cpc team solutions for random gyms on codeforces
+## Our cpc team solutions for random gyms on codeforces
+
 
 
 ## Contributors <a name = "Contributors"></a>
