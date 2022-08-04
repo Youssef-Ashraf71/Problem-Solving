@@ -20,7 +20,7 @@
     </td>
  <td align="center">
     <a href="https://github.com/farah-moh" target="_black">
-    <img src="https://avatars.githubusercontent.com/u/60123581?v=4" width="150px;" alt="Farah Mohamed"/>
+    <img src="https://avatars.githubusercontent.com/u/75073858?v=4" width="150px;" alt="Farah Mohamed"/>
     <br />
     <sub><b>Farah Mohamed</b></sub></a>
     </td>
