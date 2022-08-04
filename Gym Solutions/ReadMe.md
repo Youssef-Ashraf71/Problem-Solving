@@ -19,7 +19,7 @@
     <sub><b>Ali Tarek</b></sub></a>
     </td>
  <td align="center">
-    <a href="https://github.com/" target="_black">
+    <a href="https://github.com/farah-moh" target="_black">
     <img src="https://avatars.githubusercontent.com/u/60123581?v=4" width="150px;" alt="Farah Mohamed"/>
     <br />
     <sub><b>Farah Mohamed</b></sub></a>
